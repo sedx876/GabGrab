@@ -54,11 +54,12 @@ export default makeStyles((theme) => ({
     },
   },
   logoContainer: {
-    padding: '0 5%',
+    margin: '20px',
+    padding: '5px 5%',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '100%',
+    width: '25%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       textAlign: 'center',
@@ -67,8 +68,9 @@ export default makeStyles((theme) => ({
   alanLogo: {
     height: '27vmin',
     borderRadius: '15%',
-    padding: '0 5%',
-    margin: '3% 0',
+    padding: '10px 5%',
+    margin: '10% 0',
+    alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       height: '35vmin',
     },

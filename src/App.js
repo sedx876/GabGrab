@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core'
 import wordsToNumbers from 'words-to-numbers'
 import alanBtn from '@alan-ai/alan-sdk-web'
 import logo from './images/logo.png'
@@ -62,7 +62,7 @@ const App = () => {
           <Typography variant="body1" component="h2">
             Built By: Sharon Watkins
           </Typography>
-          <img className={classes.image} src={logo} height="50px" alt="JSMastery logo" />
+          <img className={classes.image} src={logo} height="50px" alt="news" />
         </div>
       ) : null}
     </div>
