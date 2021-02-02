@@ -5,21 +5,21 @@ import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typo
 import useStyles from './styles';
 
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, activeArticle, i }) => {
-  const classes = useStyles();
-  const [elRefs, setElRefs] = useState([]);
-  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
+  const classes = useStyles()
+  const [elRefs, setElRefs] = useState([])
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50)
 
   useEffect(() => {
-    window.scroll(0, 0);
+    window.scroll(0, 0)
 
     setElRefs((refs) => Array(20).fill().map((_, j) => refs[j] || createRef()));
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (i === activeArticle && elRefs[activeArticle]) {
-      scrollToRef(elRefs[activeArticle]);
+      scrollToRef(elRefs[activeArticle])
     }
-  }, [i, activeArticle, elRefs]);
+  }, [i, activeArticle, elRefs])
 
   return (
     <Card ref={elRefs[i]} className={ activeArticle === i ? classes.activeCard : classes.card}>
@@ -29,7 +29,7 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
           <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
           <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
         </div>
-        <Typography className={classes.title} gutterBottom variant="h5" component="h2">{title}</Typography>
+        <Typography className={classes.title} gutterBottom variant="h5" component="h2"><strong>{title}</strong></Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">{description}</Typography>
         </CardContent>
